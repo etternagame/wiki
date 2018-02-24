@@ -31,9 +31,9 @@ Run this command in a cmd from the folder where you want to download etterna:
 
 Make sure you're in the right branch(default is master). Find out which is the latest one by asking someone. As of 7/17 this is "etternalmemestatus". To change your branch to that one open a cmd in a folder inside the repo you cloned(Inside /etterna) and do
 
-    git checkout etternalmemestatus
+    git checkout develop
 
-Change etternalmemestatus to the branch you want.
+Change develop to the branch you want (master is usually the stable branch and develop the playground, unstable one).
 
 Run cmake(from cmd or cmakeGUI) configured for VS 2015 and open the project files generated(/Build/StepMania.sln). If not using cmakeGUI, the command should look like this(Run from a cmd in /Build/, you might have to change the Visual Studio version to the one you have):
 
@@ -83,14 +83,13 @@ Open a terminal and:
 ```
 git clone --depth=1 https://github.com/etternagame/etterna.git
 cd etterna
-git checkout etternalmemestatus
 git submodule update --init
 cd Build
-cmake -G 'Unix Makefiles' && cmake ..
+cmake -G 'Unix Makefiles' ..
 make
 ```
 
-Also note you probably want to do "git checkout" to the lastest branch. Ask around to find out which one it is(etternalmemestatuss is the development branch as of 07/2017)
+Also note you probably want to do "git checkout" to the branch you want. Ask around to find out which one it is(develop is the development branch as of 2/2018)
 
 If it doesn't work you can look at how travis does it(https://travis-ci.org/etternagame/etterna)
 
