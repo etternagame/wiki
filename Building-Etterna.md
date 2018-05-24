@@ -138,4 +138,50 @@ Replacing master(twice) for the git branch you want to update to. Then build aga
 
 ##  Mac
 
-Mac is currently not supported.
+#### 1: Download ####
+
+First we download/clone the repository from github:
+
+```
+git clone https://github.com/etternagame/etterna.git
+cd etterna
+git submodule update --init
+```
+
+#### 2: Libraries ####
+
+Next we install the necessary libs:
+
+```
+brew install openssl
+brew install --HEAD libuv --universal
+brew install yasm
+brew install nasm
+brew uninstall libuv
+brew install libuv --universal
+brew uninstall openssl
+brew install openssl --universal
+brew uninstall zlib
+brew install zlib --universal
+```
+
+#### 3: Final configuration ####
+
+We finish configuring the project:
+
+```
+mkdir build && cd build
+export LIBRARY_SEARCH_PATHS=../Xcode/Libraries
+export LIBRARY_PATH=../Xcode/Libraries
+mv ../src/archutils/Darwin/Etterna.pch ../src/archutils/Darwin/StepMania.pch
+cmake -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -G "Xcode" ..
+mv ../src/archutils/Darwin/StepMania.pch ../src/archutils/Darwin/Etterna.pch
+```
+
+#### 4: Building ####
+
+Finally, we build the project:
+
+```
+xcodebuild ARCHS="x86_64" -project Etterna.xcodeproj -target Etterna -destination 'platform=OS X,arch=x86_64' -xcconfig ../Xcode/conf.cnf
+```
