@@ -32,8 +32,9 @@ Run this command in a cmd from the folder where you want to download etterna:
 Make sure you're in the right branch(default is master). Find out which is the latest one by asking someone. As of 7/17 this is "etternalmemestatus". To change your branch to that one open a cmd in a folder inside the repo you cloned(Inside /etterna) and do
 
     git checkout develop
+    git submodule update --init
 
-Change develop to the branch you want (master is usually the stable branch and develop the playground, unstable one).
+Change develop to the branch you want (master is usually the stable branch and develop the playground, unstable one). REmember to run git submodule.
 
 Run cmake(from cmd or cmakeGUI) configured for VS 2015 and open the project files generated(/Build/StepMania.sln). If not using cmakeGUI, the command should look like this(Run from a cmd in /Build/, you might have to change the Visual Studio version to the one you have):
 
