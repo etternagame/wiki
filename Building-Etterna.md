@@ -29,14 +29,14 @@ Run this command in a cmd from the folder where you want to download etterna:
 
     git clone https://github.com/etternagame/etterna.git
 
-Make sure you're in the right branch(default is master). Find out which is the latest one by asking someone. As of 7/17 this is "etternalmemestatus". To change your branch to that one open a cmd in a folder inside the repo you cloned(Inside /etterna) and do
+Make sure you're in the right branch(default is master). Find out which is the latest one by asking someone. As of 7/17 this is "develop". To change your branch to that one open a cmd in a folder inside the repo you cloned(Inside /etterna) and do
 
     git checkout develop
     git submodule update --init
 
 Change develop to the branch you want (master is usually the stable branch and develop the playground, unstable one). REmember to run git submodule.
 
-Run cmake(from cmd or cmakeGUI) configured for VS 2015 and open the project files generated(/Build/StepMania.sln). If not using cmakeGUI, the command should look like this(Run from a cmd in /Build/, you might have to change the Visual Studio version to the one you have):
+Run cmake(from cmd or cmakeGUI) configured for VS 2015 and open the project files generated(/Build/Etterna.sln). If not using cmakeGUI, the command should look like this(Run from a cmd in /Build/, you might have to change the Visual Studio version to the one you have):
 
     cmake -G "Visual Studio 14 2015" --build ..
 
@@ -48,10 +48,19 @@ While compiling is completely normal.
 
 
 In order to build an installer first compile and then run stepmania.nsi(Right click+ run NSIS script) to make the installer.
-To play without installing simply compile and open etterna/Program/StepMania.exe or run the stepmania project from VS.
+To play without installing simply compile and open etterna/Program/Etterna.exe or run the Etterna project from VS.
 
 NOTE: You may need to make sure you're compiling as Release(Defaults to Debug)
 ![](https://cdn.discordapp.com/attachments/326225923240230923/337715335480475650/unknown.png)
+
+NOTE 2: If you get an error like this:
+![](http://vivide.re/863GDX4n.png)
+Try adding this to StepMania.cpp:
+```
+#include <Windows.h>
+#include <stdio.h>
+int (WINAPIV * __vsnprintf)(char *, size_t, const char*, va_list) = _vsnprintf;
+```
 
 <a name="linux" />
 
@@ -78,7 +87,7 @@ dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(
 dnf install libXrandr-devel libXtst-devel libpng-devel libjpeg-devel zlib-devel libogg-devel libvorbis-devel yasm alsa-lib-devel pulseaudio-libs-devel bzip2-devel jack-audio-connection-kit-devel libva-devel pcre-devel gtk2-devel glew-devel libudev-devel
 ```
 
-#### 2: Clone the stepmania git and compile stepmania ####
+#### 2: Clone the etterna git and compile etterna ####
 
 Open a terminal and:
 ```
@@ -96,7 +105,7 @@ If it doesn't work you can look at how travis does it(https://travis-ci.org/ette
 
 #### 3: Making a Launcher ####
 
-If you want to run etterna from a launch button like some desktop environments have, make a shell script like this and set the launch button to run the shell script. This assumes that the stepmania folder is ~/etterna. If you don't know already, "~/" is shorthand for the home folder of the current user on Linux.
+If you want to run etterna from a launch button like some desktop environments have, make a shell script like this and set the launch button to run the shell script. This assumes that the etterna folder is ~/etterna. If you don't know already, "~/" is shorthand for the home folder of the current user on Linux.
 
 Make a new emtpy text document and add the following:
 ```
