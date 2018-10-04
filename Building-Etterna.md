@@ -20,7 +20,7 @@ You will need the following:
 1. <a href="https://www.microsoft.com/en-us/download/details.aspx?id=6812">DirectX SDK</a>
 1. <a href="http://www.microsoft.com/en-us/download/details.aspx?id=48145">Microsoft Visual C++ x86 Redistributable for Visual Studio 2015</a>(If on a 64 bit system grab both x86 and x64)
 1. <a href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk">Windows 10 DK</a> Is probably needed if you're on Windows 10
-1. Having <a href="https://git-scm.com/downloads">Git</a> is also recommended.
+1. Having <a href="https://git-scm.com/downloads">Git</a> is also necessary (For submodules), unless someone sent you a zip of the repo with submodules
 
 ## Downloading and building
 
