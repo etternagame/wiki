@@ -89,6 +89,7 @@ Open a terminal and:
 git clone --depth=1 https://github.com/etternagame/etterna.git
 cd etterna
 git submodule update --init
+mkdir Build
 cd Build
 cmake -G 'Unix Makefiles' ..
 make
