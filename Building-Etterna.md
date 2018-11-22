@@ -34,11 +34,11 @@ Make sure you're in the right branch(default is master). Find out which is the l
     git checkout develop
     git submodule update --init
 
-Change develop to the branch you want (master is usually the stable branch and develop the playground, unstable one). REmember to run git submodule.
+Change develop to the branch you want (master is usually the stable branch and develop the playground, unstable one). Remember to run git submodule.
 
 Run cmake(from cmd or cmakeGUI) configured for VS 2015 and open the project files generated(/Build/Etterna.sln). If not using cmakeGUI, the command should look like this(Run from a cmd in /Build/, you might have to change the Visual Studio version to the one you have):
 
-    cmake -G "Visual Studio 14 2015" --build ..
+    cmake .. -G "Visual Studio 14 2015" --build
 
 Note that an error like this:
 
@@ -91,7 +91,7 @@ cd etterna
 git submodule update --init
 mkdir Build
 cd Build
-cmake -G 'Unix Makefiles' ..
+cmake .. -G 'Unix Makefiles'
 make
 ```
 
