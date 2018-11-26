@@ -1,4 +1,10 @@
-## Etterna Wiki
+Note: This wiki is no longer updated. See: 
+  Lua: https://etternagame.github.io/lua-docs/
+  C++: https://etternagame.github.io/cpp-docs
+  Community: https://wiki.etternaonline.com/
+  Building: See https://github.com/etternagame/etterna
+ 
+ ## Etterna Wiki
 
 This is the Wiki for <a href="https://github.com/etternagame/etterna">Etterna</a>
 
